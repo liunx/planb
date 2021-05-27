@@ -82,9 +82,9 @@ def main():
                         type=float, help='Histogram threshold for detect object.')
     parser.add_argument('--overlap_threshold', default=0.5,
                         type=float, help='Threshold when decide a object match the tracker.')
-    parser.add_argument('--max_width', default=1280,
+    parser.add_argument('--max_width', default=512,
                         type=int, help='Max width of the frame.')
-    parser.add_argument('--max_height', default=720,
+    parser.add_argument('--max_height', default=288,
                         type=int, help='Max height of the frame.')
     parser.add_argument('--rotate', default=0, choices=[-90, 0, 90, 180],
                         type=int, help='Rotate angles [-90, 0, 90, 180]')
