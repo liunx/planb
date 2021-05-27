@@ -86,6 +86,8 @@ def main():
                         type=int, help='Max width of the frame.')
     parser.add_argument('--max_height', default=720,
                         type=int, help='Max height of the frame.')
+    parser.add_argument('--rotate', default=0, choices=[-90, 0, 90, 180],
+                        type=int, help='Rotate angles [-90, 0, 90, 180]')
     args = parser.parse_args()
     if args.model == 'ssd_inception_v2':
         create_model = model_ssd_inception_v2_coco
@@ -108,6 +110,13 @@ def main():
         if h > args.max_height:
             rate = h // args.max_height
             frame = cv.resize(frame, (int(w/rate), int(h/rate)))
+        # rotation
+        if args.rotate == 90:
+            frame = cv.rotate(frame, cv.ROTATE_90_CLOCKWISE)
+        elif args.rotate == -90:
+            frame = cv.rotate(frame, cv.ROTATE_90_COUNTERCLOCKWISE)
+        elif args.rotate == 180:
+            frame = cv.rotate(frame, cv.ROTATE_180)
         start = time.time()
         classes, scores, boxes = model.detect(frame, args.confidence, args.nms)
         end = time.time()
