@@ -82,6 +82,10 @@ def main():
                         type=float, help='Histogram threshold for detect object.')
     parser.add_argument('--overlap_threshold', default=0.5,
                         type=float, help='Threshold when decide a object match the tracker.')
+    parser.add_argument('--max_width', default=1280,
+                        type=int, help='Max width of the frame.')
+    parser.add_argument('--max_height', default=720,
+                        type=int, help='Max height of the frame.')
     args = parser.parse_args()
     if args.model == 'ssd_inception_v2':
         create_model = model_ssd_inception_v2_coco
@@ -100,9 +104,10 @@ def main():
         if not grabbed:
             sys.exit(1)
         h, w, _ = frame.shape
-        # shrink the size <= 720P
-        if h > 720:
-            frame = cv.resize(frame, (int(w/2), int(h/2)))
+        # shrink the size of frame
+        if h > args.max_height:
+            rate = h // args.max_height
+            frame = cv.resize(frame, (int(w/rate), int(h/rate)))
         start = time.time()
         classes, scores, boxes = model.detect(frame, args.confidence, args.nms)
         end = time.time()
