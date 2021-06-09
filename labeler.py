@@ -1,4 +1,5 @@
 import cv2 as cv
+import cvui
 import sys
 import time
 import argparse
@@ -85,7 +86,7 @@ def main():
     )
     parser.add_argument(
         "--tracker_labels",
-        default=["Liu Lei"],
+        default=[],
         nargs="+",
         type=str,
         help="Labels to detect.",

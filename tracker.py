@@ -55,7 +55,7 @@ class Tracker:
 
 
 if __name__ == "__main__":
-    labels = ["Liu Lei"]
+    labels = ["demo"]
     tracker = Tracker(labels)
     vc = cv.VideoCapture(sys.argv[1])
     while cv.waitKey(1) < 1:
