@@ -40,6 +40,8 @@ def main():
             draw_bbox(frame, _object)
         cv.imshow('Viewer', frame)
         ch = cv.waitKey(0)
+        if ch == ord('d'):
+            pass
         if ch == ord('q'):
             break
 

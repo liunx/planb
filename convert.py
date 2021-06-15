@@ -42,7 +42,7 @@ class PascalVoc:
         self.annotations = data_dir + '/Annotations'
         self.jpeg_images = data_dir + '/JPEGImages'
         image_sets = data_dir + '/ImageSets/Main'
-        self.trainval = image_sets + '/trainval.txt'
+        self.ids = image_sets + '/ids.txt'
         self.train = image_sets + '/train.txt'
         self.val = image_sets + '/val.txt'
         for dp in [self.annotations, image_sets, self.jpeg_images]:
@@ -68,5 +68,5 @@ class PascalVoc:
             cv.imwrite('{}/{}'.format(self.jpeg_images, img), frame)
             tree = etree.ElementTree(root)
             tree.write('{}/{}'.format(self.annotations, xml))
-            with open(self.trainval, 'a') as f:
+            with open(self.ids, 'a') as f:
                 f.write(timestamp + '\n')
