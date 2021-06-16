@@ -52,17 +52,17 @@ def find_good_features(frame):
     return features
 
 
-def draw_features(frame, corners):
+def draw_features(frame, features):
     radius = 4
-    for i in range(corners.shape[0]):
-        cv.circle(frame, (int(corners[i, 0, 0]), int(corners[i, 0, 1])), radius, (rng.randint(
+    for i in range(features.shape[0]):
+        cv.circle(frame, (int(features[i, 0, 0]), int(features[i, 0, 1])), radius, (rng.randint(
             0, 256), rng.randint(0, 256), rng.randint(0, 256)), cv.FILLED)
 
 
-def create_marker(frame, features):
+def create_marker(frame, features, includes=4, padding=3):
     # triple points form a plane
-    y, x, _ = frame.shape
-    center = np.array((int(y / 2), int(x / 2)))
+    h, w, _ = frame.shape
+    center = np.array((int(w / 2), int(h / 2)))
     pos_dict = {}
     for i in range(features.shape[0]):
         pos = np.array((int(features[i, 0, 0]), int(features[i, 0, 1])))
@@ -70,8 +70,17 @@ def create_marker(frame, features):
         pos_dict[_sum] = pos
     keys = list(pos_dict.keys())
     keys.sort()
-    p1 = pos_dict[keys[0]]
-    p2 = pos_dict[keys[1]]
+    ylist = []
+    xlist = []
+    for i in range(includes):
+        x, y = pos_dict[keys[i]]
+        ylist.append(y)
+        xlist.append(x)
+    y = min(ylist) - padding
+    x = min(xlist) - padding
+    h = max(ylist) - min(ylist) + padding
+    w = max(xlist) - min(xlist) + padding
+    return (x, y, w, h)
 
 
 def main():
@@ -91,7 +100,7 @@ def main():
             if not grabbed:
                 break
             h, w, _ = frame.shape
-            frame = cv.resize(frame, (int(w/2), int(h/2)))
+            #frame = cv.resize(frame, (int(w/2), int(h/2)))
             _frame = frame
         else:
             _frame = frame.copy()
@@ -112,7 +121,9 @@ def main():
                 for (_corner, _id) in zip(corners, ids):
                     if _id not in markers:
                         features = find_good_features(box_frame)
+                        draw_features(box_frame, features)
                         bbox = create_marker(box_frame, features)
+                        bbox = (bbox[0] + x, bbox[1] + y, bbox[2], bbox[3])
                         tracker.add(frame, bbox, _id)
                         markers.append(_id)
         # =============================
