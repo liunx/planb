@@ -35,20 +35,39 @@ class Tracker:
         self.trackers = d
 
 
+# Parameters for lucas kanade optical flow
+lk_params = dict(winSize=(15, 15),
+                 maxLevel=2,
+                 criteria=(cv.TERM_CRITERIA_EPS | cv.TERM_CRITERIA_COUNT, 10, 0.03))
+
+# Create some random colors
+color = np.random.randint(0, 255, (100, 3))
+
+
+class OpticalFlow:
+    def __init__(self) -> None:
+        self.flows = []
+
+    def add(self, frame, p0):
+        pass
+
+    def update(self, old_gray, frame_gray):
+        p1, st, err = cv.calcOpticalFlowPyrLK(
+            old_gray, frame_gray, p0, None, **lk_params)
+        if p1 is not None:
+            good_new = p1[st==1]
+            good_old = p0[st==1]
+
+
+# Parameters for Shi-Tomasi algorithm
+feature_params = dict(maxCorners=7, qualityLevel=0.01, minDistance=10,
+                      blockSize=3, gradientSize=3, useHarrisDetector=False, k=0.04)
+
+
 def find_good_features(frame):
-    # Parameters for Shi-Tomasi algorithm
-    maxCorners = 13
-    qualityLevel = 0.01
-    minDistance = 10
-    blockSize = 3
-    gradientSize = 3
-    useHarrisDetector = False
-    k = 0.04
     # Apply corner detection
     src_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-    features = cv.goodFeaturesToTrack(src_gray, maxCorners,
-                                      qualityLevel, minDistance, None, blockSize=blockSize,
-                                      gradientSize=gradientSize, useHarrisDetector=useHarrisDetector, k=k)
+    features = cv.goodFeaturesToTrack(src_gray, mask=None, **feature_params)
     return features
 
 
@@ -85,7 +104,6 @@ def create_marker(frame, features, includes=4, padding=3):
 
 def main():
     win_name = 'Finder'
-    vc = cv.VideoCapture(sys.argv[1])
     cv.namedWindow(win_name)
     cvui.init(win_name)
     class_names, model = model_ssd_inception_v2_coco()
@@ -94,25 +112,34 @@ def main():
     markers = []
     tracker = Tracker(markers)
     pause = False
+    debug = False
+    # first frame
+    vc = cv.VideoCapture(sys.argv[1])
+    (grabbed, _frame) = vc.read()
+    if not grabbed:
+        raise RuntimeError('Read frame!')
+    old_gray = cv.cvtColor(_frame, cv.COLOR_BGR2GRAY)
+    # the loop
     while True:
         if not pause:
-            (grabbed, frame) = vc.read()
+            (grabbed, _frame) = vc.read()
             if not grabbed:
-                break
-            h, w, _ = frame.shape
-            #frame = cv.resize(frame, (int(w/2), int(h/2)))
-            _frame = frame
+                raise RuntimeError('Read frame!')
+            frame = _frame
         else:
-            _frame = frame.copy()
+            frame = _frame.copy()
+        h, w, _ = frame.shape
+        frame = cv.resize(frame, (640, 480))
+        frame_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
         # objects detecting
-        classes, scores, boxes = model.detect(_frame, 0.4, 0.4)
+        classes, scores, boxes = model.detect(frame, 0.4, 0.4)
         for (classid, score, box) in zip(classes, scores, boxes):
             if score < 0.6:
                 continue
             x, y, w, h = box
             cname = class_names[classid[0]]
             box_frame = frame[y:y+h, x:x+w]
-            # step 1: search aruco id
+            # searching aruco id
             corners, ids, rejected = cv.aruco.detectMarkers(
                 box_frame, aruco_dict, parameters=aruco_params)
             if len(corners) > 0:
@@ -121,19 +148,27 @@ def main():
                 for (_corner, _id) in zip(corners, ids):
                     if _id not in markers:
                         features = find_good_features(box_frame)
-                        draw_features(box_frame, features)
+                        if debug:
+                            draw_features(box_frame, features)
                         bbox = create_marker(box_frame, features)
                         bbox = (bbox[0] + x, bbox[1] + y, bbox[2], bbox[3])
                         tracker.add(frame, bbox, _id)
                         markers.append(_id)
+            # ===========================
+            if debug:
+                # draw optical flows
+                pass
         # =============================
         tracker.update(frame)
-        cvui.imshow(win_name, _frame)
+        old_gray = frame_gray
+        cvui.imshow(win_name, frame)
         ch = cv.waitKey(1)
         if ch == ord('q'):
             break
         elif ch == ord(' '):
             pause = not pause
+        elif ch == ord('d'):
+            pass
 
 
 if __name__ == '__main__':
