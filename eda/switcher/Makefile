@@ -1,5 +1,5 @@
 CCFLAGS := -Wno-sign-compare -faligned-new
-INCLUDES :=`python3 -m pybind11 --includes` -I /usr/include/python3.6 
+INCLUDES :=`python3 -m pybind11 --includes`
 
 #.PHONY: all
 all: libswitcher.so switcher.so

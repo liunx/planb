@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
 #include <pybind11/pybind11.h>
 #include "Vswitcher.h"
 #include "verilated.h"
@@ -32,13 +33,32 @@ public:
         tb->eval();
     }
 
-    uint64_t load(py::args args)
+    uint64_t get(const std::string &param)
     {
-        return 0;
+        if (param == "clk")
+            return tb->clk;
+        else if (param == "reset")
+            return tb->reset;
+        else if (param == "sda")
+            return tb->sda;
+        else if (param == "lines_in")
+            return tb->lines_in;
+        else if (param == "lines_out")
+            return tb->lines_out;
+
+        return -1;
     }
 
-    void store(const py::kwargs& kwargs)
+    void set(const std::string &param, uint64_t val)
     {
+        if (param == "clk")
+            tb->clk = val;
+        else if (param == "reset")
+            tb->reset = val;
+        else if (param == "sda")
+            tb->sda = val;
+        else if (param == "lines_in")
+            tb->lines_in = val;
     }
 
     void dump(uint64_t timeui)

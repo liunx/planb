@@ -8,5 +8,7 @@ PYBIND11_MODULE(switcher, m) {
     .def(py::init<const std::string &>())
     .def("eval", &TestBench::eval)
     .def("dump", &TestBench::dump)
+    .def("set", &TestBench::set)
+    .def("get", &TestBench::get)
     ;
 }
