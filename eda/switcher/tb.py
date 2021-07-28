@@ -24,16 +24,25 @@ class Test(TestBench):
             elif self.tickcount == (start + i*2+1):
                 self.set(param, 0)
 
-    def process(self, duration):
-        while self.tickcount < duration:
-            self.set_at('reset', 1, 0)
-            self.set_at('lines_in', 0b1111, 0)
-            self.set_at('reset', 0, 2)
-            self.serialize_set('sda', 0b1111, 8, 5)
+    def process(self, msg, duration, start=0):
+        while self.tickcount < (start+duration):
+            self.set_at('reset', 1, start)
+            self.set_at('motors_in', 0b1, start)
+            self.set_at('servo_in', 0b1, start)
+            self.set_at('reset', 0, start+4)
+            self.serialize_set('sda', msg, 8, start+7)
             self.tick()
             self.tickcount += 1
 
 
 if __name__ == '__main__':
     test = Test('switcher_trace.vcd')
-    test.process(20)
+    test.process(0b11111100, 30)
+    start = test.tickcount
+    test.process(0b00000101, 30, start=start)
+    start = test.tickcount
+    test.process(0b00010001, 30, start=start)
+    start = test.tickcount
+    test.process(0b10000001, 30, start=start)
+    start = test.tickcount
+    test.process(0b11111100, 30, start=start)

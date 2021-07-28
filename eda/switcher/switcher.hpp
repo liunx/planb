@@ -41,10 +41,12 @@ public:
             return tb->reset;
         else if (param == "sda")
             return tb->sda;
-        else if (param == "lines_in")
-            return tb->lines_in;
-        else if (param == "lines_out")
-            return tb->lines_out;
+        else if (param == "motors_in")
+            return tb->motors_in;
+        else if (param == "motors_out")
+            return tb->motors_out;
+        else
+            std::cerr << param << ": not support!!!" << std::endl;
 
         return -1;
     }
@@ -57,8 +59,12 @@ public:
             tb->reset = val;
         else if (param == "sda")
             tb->sda = val;
-        else if (param == "lines_in")
-            tb->lines_in = val;
+        else if (param == "motors_in")
+            tb->motors_in = val;
+        else if (param == "servo_in")
+            tb->servo_in = val;
+        else
+            std::cerr << param << ": not support!!!" << std::endl;
     }
 
     void dump(uint64_t timeui)
