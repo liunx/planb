@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.8359033019038656 -0.5185900090977541 -0.17980565155246395 0.7863736494449995
-  position -0.3121556976677087 0.7892745133668301 0.9861171520522594
+  orientation -0.7116815549698744 -0.6782090811551087 -0.18314422337165037 0.7253163850171525
+  position -0.4975019111476666 0.763917219337939 1.1864749096604739
 }
 TexturedBackground {
 }
@@ -676,5 +676,5 @@ Robot {
   boundingObject USE Body
   physics Physics {
   }
-  controller "robot_controller"
+  controller "<extern>"
 }
