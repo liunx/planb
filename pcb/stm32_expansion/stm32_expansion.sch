@@ -64,13 +64,13 @@ A6
 Text Notes 1300 4200 0    50   ~ 0
 A7
 Text Notes 1300 4300 0    50   ~ 0
-B0
+B0 (TIM3_CH3)
 Text Notes 1300 4400 0    50   ~ 0
-B1
+B1 (TIM3_CH4)
 Text Notes 1300 4500 0    50   ~ 0
-B10
+B10 (TIM2_CH3)
 Text Notes 1300 4600 0    50   ~ 0
-B11
+B11 (TIM2_CH4)
 Text Notes 1300 4700 0    50   ~ 0
 R
 Text Notes 1300 4800 0    50   ~ 0
@@ -94,23 +94,23 @@ B7
 Text Notes 2950 3700 0    50   ~ 0
 B6
 Text Notes 2950 3800 0    50   ~ 0
-B5
+B5 (TIM3_CH2)
 Text Notes 2950 3900 0    50   ~ 0
-B4
+B4 (TIM3_CH1)
 Text Notes 2950 4000 0    50   ~ 0
-B3
+B3 (TIM2_CH2)
 Text Notes 2950 4100 0    50   ~ 0
-A15
+A15 (TIM2_CH1)
 Text Notes 2950 4200 0    50   ~ 0
 A12
 Text Notes 2950 4300 0    50   ~ 0
-A11
+A11 (TIM1_CH4)
 Text Notes 2950 4400 0    50   ~ 0
-A10
+A10 (TIM1_CH3)
 Text Notes 2950 4500 0    50   ~ 0
-A9
+A9 (TIM1_CH2)
 Text Notes 2950 4600 0    50   ~ 0
-A8
+A8 (TIM1_CH1)
 Text Notes 2950 4700 0    50   ~ 0
 B15
 Text Notes 2950 4800 0    50   ~ 0
@@ -564,23 +564,23 @@ Pin28
 Text Label 2450 3700 0    50   ~ 0
 Pin29
 Text Label 2450 3800 0    50   ~ 0
-Pin30
+Pin15
 Text Label 2450 3900 0    50   ~ 0
-Pin33
+Pin14
 Text Label 2450 4000 0    50   ~ 0
-Pin34
+Pin06
 Text Label 2450 4100 0    50   ~ 0
-Pin35
+Pin05
 Text Label 2450 4200 0    50   ~ 0
 Pin36
 Text Label 2450 4300 0    50   ~ 0
-Pin37
+Pin04
 Text Label 2450 4400 0    50   ~ 0
-Pin38
+Pin03
 Text Label 2450 4500 0    50   ~ 0
-Pin39
+Pin02
 Text Label 2450 4600 0    50   ~ 0
-Pin40
+Pin01
 Text Label 2450 4700 0    50   ~ 0
 Pin41
 Text Label 2450 4800 0    50   ~ 0
@@ -625,4 +625,20 @@ Wire Wire Line
 	2450 5000 2700 5000
 Text Label 2500 3300 0    50   ~ 0
 5V
+Text Label 800  4500 0    50   ~ 0
+Pin07
+Text Label 800  4600 0    50   ~ 0
+Pin08
+Text Label 800  4300 0    50   ~ 0
+Pin16
+Text Label 800  4400 0    50   ~ 0
+Pin17
+Wire Wire Line
+	800  4300 1050 4300
+Wire Wire Line
+	800  4400 1050 4400
+Wire Wire Line
+	800  4500 1050 4500
+Wire Wire Line
+	800  4600 1050 4600
 $EndSCHEMATC
