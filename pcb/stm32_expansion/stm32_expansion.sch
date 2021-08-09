@@ -555,14 +555,6 @@ Wire Wire Line
 	2500 3300 2700 3300
 Wire Wire Line
 	900  1950 1150 1950
-Text Label 2450 3400 0    50   ~ 0
-Pin26
-Text Label 2450 3500 0    50   ~ 0
-Pin27
-Text Label 2450 3600 0    50   ~ 0
-Pin28
-Text Label 2450 3700 0    50   ~ 0
-Pin29
 Text Label 2450 3800 0    50   ~ 0
 Pin15
 Text Label 2450 3900 0    50   ~ 0
@@ -571,8 +563,6 @@ Text Label 2450 4000 0    50   ~ 0
 Pin06
 Text Label 2450 4100 0    50   ~ 0
 Pin05
-Text Label 2450 4200 0    50   ~ 0
-Pin36
 Text Label 2450 4300 0    50   ~ 0
 Pin04
 Text Label 2450 4400 0    50   ~ 0
@@ -582,21 +572,13 @@ Pin02
 Text Label 2450 4600 0    50   ~ 0
 Pin01
 Text Label 2450 4700 0    50   ~ 0
-Pin41
+Pin21
 Text Label 2450 4800 0    50   ~ 0
-Pin42
+Pin20
 Text Label 2450 4900 0    50   ~ 0
-Pin43
+Pin19
 Text Label 2450 5000 0    50   ~ 0
-Pin44
-Wire Wire Line
-	2450 3400 2700 3400
-Wire Wire Line
-	2450 3500 2700 3500
-Wire Wire Line
-	2450 3600 2700 3600
-Wire Wire Line
-	2450 3700 2700 3700
+Pin18
 Wire Wire Line
 	2450 3800 2700 3800
 Wire Wire Line
@@ -605,8 +587,6 @@ Wire Wire Line
 	2450 4000 2700 4000
 Wire Wire Line
 	2450 4100 2700 4100
-Wire Wire Line
-	2450 4200 2700 4200
 Wire Wire Line
 	2450 4300 2700 4300
 Wire Wire Line
