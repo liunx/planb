@@ -823,25 +823,6 @@ Wire Wire Line
 	8550 3400 8850 3400
 Wire Wire Line
 	8550 3500 8850 3500
-$Comp
-L Connector_Generic:Conn_01x04 UART1
-U 1 1 61271737
-P 7650 5200
-F 0 "UART1" H 7730 5146 50  0000 L CNN
-F 1 "Conn_01x04" H 7730 5101 50  0001 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 7650 5200 50  0001 C CNN
-F 3 "~" H 7650 5200 50  0001 C CNN
-	1    7650 5200
-	1    0    0    -1  
-$EndComp
-Text Label 7250 5100 0    50   ~ 0
-GND
-Text Label 7250 5200 0    50   ~ 0
-5V
-Wire Wire Line
-	7250 5100 7450 5100
-Wire Wire Line
-	7250 5200 7450 5200
 Text Label 650  3700 0    50   ~ 0
 UART2_TX
 Text Label 650  3800 0    50   ~ 0
@@ -850,14 +831,6 @@ Wire Wire Line
 	650  3700 1050 3700
 Wire Wire Line
 	650  3800 1050 3800
-Text Label 7050 5300 0    50   ~ 0
-UART2_TX
-Text Label 7050 5400 0    50   ~ 0
-UART2_RX
-Wire Wire Line
-	7050 5300 7450 5300
-Wire Wire Line
-	7050 5400 7450 5400
 Text Label 2350 3400 0    50   ~ 0
 CAN_TX
 Text Label 2350 3500 0    50   ~ 0
@@ -1121,4 +1094,55 @@ Wire Wire Line
 Connection ~ 4550 5750
 Wire Wire Line
 	4550 6150 5050 6150
+$Comp
+L Connector_Generic:Conn_01x07 LoRa1
+U 1 1 611397ED
+P 7650 5350
+F 0 "LoRa1" H 7730 5346 50  0000 L CNN
+F 1 "Conn_01x07" H 7730 5301 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical" H 7650 5350 50  0001 C CNN
+F 3 "~" H 7650 5350 50  0001 C CNN
+	1    7650 5350
+	1    0    0    -1  
+$EndComp
+Text Label 7250 5050 0    50   ~ 0
+GND
+Text Label 7250 5150 0    50   ~ 0
+5V
+Text Label 7250 5250 0    50   ~ 0
+AUX
+Text Label 7050 5350 0    50   ~ 0
+UART2_RX
+Text Label 7050 5450 0    50   ~ 0
+UART2_TX
+Text Label 7250 5550 0    50   ~ 0
+MD1
+Text Label 7250 5650 0    50   ~ 0
+MD0
+Wire Wire Line
+	7250 5050 7450 5050
+Wire Wire Line
+	7250 5150 7450 5150
+Wire Wire Line
+	7250 5250 7450 5250
+Wire Wire Line
+	7050 5350 7450 5350
+Wire Wire Line
+	7050 5450 7450 5450
+Wire Wire Line
+	7250 5550 7450 5550
+Wire Wire Line
+	7250 5650 7450 5650
+Text Label 850  3500 0    50   ~ 0
+MD0
+Text Label 850  3600 0    50   ~ 0
+MD1
+Wire Wire Line
+	850  3500 1050 3500
+Wire Wire Line
+	850  3600 1050 3600
+Text Label 850  3400 0    50   ~ 0
+AUX
+Wire Wire Line
+	850  3400 1050 3400
 $EndSCHEMATC
