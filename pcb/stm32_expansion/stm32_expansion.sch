@@ -522,35 +522,6 @@ F 3 "~" H 1200 5750 50  0001 C CNN
 $EndComp
 Text Label 1600 5750 2    50   ~ 0
 5V
-Text Label 1600 5850 2    50   ~ 0
-GND
-Wire Wire Line
-	1400 5750 1600 5750
-Wire Wire Line
-	1400 5850 1600 5850
-$Comp
-L Interface_CAN_LIN:TJA1051T U1
-U 1 1 61135E5D
-P 5900 3650
-F 0 "U1" H 5900 4231 50  0000 C CNN
-F 1 "TJA1051T" H 5900 4140 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5900 3150 50  0001 C CIN
-F 3 "http://www.nxp.com/documents/data_sheet/TJA1051.pdf" H 5900 3650 50  0001 C CNN
-	1    5900 3650
-	1    0    0    -1  
-$EndComp
-Text Label 850  4900 0    50   ~ 0
-GND
-Text Label 850  5000 0    50   ~ 0
-GND
-Wire Wire Line
-	850  4900 1050 4900
-Wire Wire Line
-	850  5000 1050 5000
-Text Label 2500 3200 0    50   ~ 0
-GND
-Wire Wire Line
-	2500 3200 2700 3200
 Wire Wire Line
 	2500 3300 2700 3300
 Wire Wire Line
@@ -621,4 +592,533 @@ Wire Wire Line
 	800  4500 1050 4500
 Wire Wire Line
 	800  4600 1050 4600
+$Comp
+L Connector_Generic:Conn_01x03 S1
+U 1 1 611D5E10
+P 7650 4050
+F 0 "S1" H 7600 4250 50  0000 L CNN
+F 1 "Conn_01x03" H 7730 4001 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 7650 4050 50  0001 C CNN
+F 3 "~" H 7650 4050 50  0001 C CNN
+	1    7650 4050
+	1    0    0    -1  
+$EndComp
+Text Label 7200 3950 0    50   ~ 0
+GND
+Text Label 7200 4050 0    50   ~ 0
+5V
+Text Label 7200 4150 0    50   ~ 0
+Pin90
+Wire Wire Line
+	7200 3950 7450 3950
+Wire Wire Line
+	7200 4050 7450 4050
+Wire Wire Line
+	7200 4150 7450 4150
+$Comp
+L Connector_Generic:Conn_01x03 S2
+U 1 1 611F02F4
+P 8350 4050
+F 0 "S2" H 8300 4250 50  0000 L CNN
+F 1 "Conn_01x03" H 8430 4001 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 8350 4050 50  0001 C CNN
+F 3 "~" H 8350 4050 50  0001 C CNN
+	1    8350 4050
+	1    0    0    -1  
+$EndComp
+Text Label 7900 3950 0    50   ~ 0
+GND
+Text Label 7900 4050 0    50   ~ 0
+5V
+Text Label 7900 4150 0    50   ~ 0
+Pin91
+Wire Wire Line
+	7900 3950 8150 3950
+Wire Wire Line
+	7900 4050 8150 4050
+Wire Wire Line
+	7900 4150 8150 4150
+$Comp
+L Connector_Generic:Conn_01x03 S3
+U 1 1 611F950C
+P 9050 4050
+F 0 "S3" H 9000 4250 50  0000 L CNN
+F 1 "Conn_01x03" H 9130 4001 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 9050 4050 50  0001 C CNN
+F 3 "~" H 9050 4050 50  0001 C CNN
+	1    9050 4050
+	1    0    0    -1  
+$EndComp
+Text Label 8600 3950 0    50   ~ 0
+GND
+Text Label 8600 4050 0    50   ~ 0
+5V
+Text Label 8600 4150 0    50   ~ 0
+Pin92
+Wire Wire Line
+	8600 3950 8850 3950
+Wire Wire Line
+	8600 4050 8850 4050
+Wire Wire Line
+	8600 4150 8850 4150
+$Comp
+L Connector_Generic:Conn_01x03 S4
+U 1 1 61203FEB
+P 7650 4550
+F 0 "S4" H 7600 4750 50  0000 L CNN
+F 1 "Conn_01x03" H 7730 4501 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 7650 4550 50  0001 C CNN
+F 3 "~" H 7650 4550 50  0001 C CNN
+	1    7650 4550
+	1    0    0    -1  
+$EndComp
+Text Label 7200 4450 0    50   ~ 0
+GND
+Text Label 7200 4550 0    50   ~ 0
+5V
+Text Label 7200 4650 0    50   ~ 0
+Pin95
+Wire Wire Line
+	7200 4450 7450 4450
+Wire Wire Line
+	7200 4550 7450 4550
+Wire Wire Line
+	7200 4650 7450 4650
+$Comp
+L Connector_Generic:Conn_01x03 S5
+U 1 1 612043AD
+P 8350 4550
+F 0 "S5" H 8300 4750 50  0000 L CNN
+F 1 "Conn_01x03" H 8430 4501 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 8350 4550 50  0001 C CNN
+F 3 "~" H 8350 4550 50  0001 C CNN
+	1    8350 4550
+	1    0    0    -1  
+$EndComp
+Text Label 7900 4450 0    50   ~ 0
+GND
+Text Label 7900 4550 0    50   ~ 0
+5V
+Text Label 7900 4650 0    50   ~ 0
+Pin96
+Wire Wire Line
+	7900 4450 8150 4450
+Wire Wire Line
+	7900 4550 8150 4550
+Wire Wire Line
+	7900 4650 8150 4650
+$Comp
+L Connector_Generic:Conn_01x03 S6
+U 1 1 612043BD
+P 9050 4550
+F 0 "S6" H 9000 4750 50  0000 L CNN
+F 1 "Conn_01x03" H 9130 4501 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 9050 4550 50  0001 C CNN
+F 3 "~" H 9050 4550 50  0001 C CNN
+	1    9050 4550
+	1    0    0    -1  
+$EndComp
+Text Label 8600 4450 0    50   ~ 0
+GND
+Text Label 8600 4550 0    50   ~ 0
+5V
+Text Label 8600 4650 0    50   ~ 0
+Pin97
+Wire Wire Line
+	8600 4450 8850 4450
+Wire Wire Line
+	8600 4550 8850 4550
+Wire Wire Line
+	8600 4650 8850 4650
+$Comp
+L Connector_Generic:Conn_01x05 M1
+U 1 1 61221AE5
+P 7650 3300
+F 0 "M1" H 7600 3600 50  0000 L CNN
+F 1 "Conn_01x05" H 7730 3251 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical" H 7650 3300 50  0001 C CNN
+F 3 "~" H 7650 3300 50  0001 C CNN
+	1    7650 3300
+	1    0    0    -1  
+$EndComp
+Text Label 7150 3100 0    50   ~ 0
+GND
+Text Label 7150 3200 0    50   ~ 0
+Pin76
+Text Label 7150 3300 0    50   ~ 0
+Pin77
+Text Label 7150 3400 0    50   ~ 0
+Pin78
+Text Label 7150 3500 0    50   ~ 0
+Pin81
+Wire Wire Line
+	7150 3100 7450 3100
+Wire Wire Line
+	7150 3200 7450 3200
+Wire Wire Line
+	7150 3300 7450 3300
+Wire Wire Line
+	7150 3400 7450 3400
+Wire Wire Line
+	7150 3500 7450 3500
+$Comp
+L Connector_Generic:Conn_01x05 M2
+U 1 1 6124D465
+P 8350 3300
+F 0 "M2" H 8300 3600 50  0000 L CNN
+F 1 "Conn_01x05" H 8430 3251 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical" H 8350 3300 50  0001 C CNN
+F 3 "~" H 8350 3300 50  0001 C CNN
+	1    8350 3300
+	1    0    0    -1  
+$EndComp
+Text Label 7850 3100 0    50   ~ 0
+GND
+Text Label 7850 3200 0    50   ~ 0
+Pin82
+Text Label 7850 3300 0    50   ~ 0
+Pin83
+Text Label 7850 3400 0    50   ~ 0
+Pin84
+Text Label 7850 3500 0    50   ~ 0
+Pin85
+Wire Wire Line
+	7850 3100 8150 3100
+Wire Wire Line
+	7850 3200 8150 3200
+Wire Wire Line
+	7850 3300 8150 3300
+Wire Wire Line
+	7850 3400 8150 3400
+Wire Wire Line
+	7850 3500 8150 3500
+$Comp
+L Connector_Generic:Conn_01x05 M3
+U 1 1 6125730E
+P 9050 3300
+F 0 "M3" H 9000 3600 50  0000 L CNN
+F 1 "Conn_01x05" H 9130 3251 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical" H 9050 3300 50  0001 C CNN
+F 3 "~" H 9050 3300 50  0001 C CNN
+	1    9050 3300
+	1    0    0    -1  
+$EndComp
+Text Label 8550 3100 0    50   ~ 0
+GND
+Text Label 8550 3200 0    50   ~ 0
+Pin86
+Text Label 8550 3300 0    50   ~ 0
+Pin87
+Text Label 8550 3400 0    50   ~ 0
+Pin88
+Text Label 8550 3500 0    50   ~ 0
+Pin89
+Wire Wire Line
+	8550 3100 8850 3100
+Wire Wire Line
+	8550 3200 8850 3200
+Wire Wire Line
+	8550 3300 8850 3300
+Wire Wire Line
+	8550 3400 8850 3400
+Wire Wire Line
+	8550 3500 8850 3500
+$Comp
+L Connector_Generic:Conn_01x04 UART1
+U 1 1 61271737
+P 7650 5200
+F 0 "UART1" H 7730 5146 50  0000 L CNN
+F 1 "Conn_01x04" H 7730 5101 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 7650 5200 50  0001 C CNN
+F 3 "~" H 7650 5200 50  0001 C CNN
+	1    7650 5200
+	1    0    0    -1  
+$EndComp
+Text Label 7250 5100 0    50   ~ 0
+GND
+Text Label 7250 5200 0    50   ~ 0
+5V
+Wire Wire Line
+	7250 5100 7450 5100
+Wire Wire Line
+	7250 5200 7450 5200
+Text Label 650  3700 0    50   ~ 0
+UART2_TX
+Text Label 650  3800 0    50   ~ 0
+UART2_RX
+Wire Wire Line
+	650  3700 1050 3700
+Wire Wire Line
+	650  3800 1050 3800
+Text Label 7050 5300 0    50   ~ 0
+UART2_TX
+Text Label 7050 5400 0    50   ~ 0
+UART2_RX
+Wire Wire Line
+	7050 5300 7450 5300
+Wire Wire Line
+	7050 5400 7450 5400
+Text Label 2350 3400 0    50   ~ 0
+CAN_TX
+Text Label 2350 3500 0    50   ~ 0
+CAN_RX
+Wire Wire Line
+	2350 3400 2700 3400
+Wire Wire Line
+	2350 3500 2700 3500
+$Comp
+L Connector_Generic:Conn_01x04 CAN1
+U 1 1 612C74EE
+P 8800 5200
+F 0 "CAN1" H 8880 5146 50  0000 L CNN
+F 1 "Conn_01x04" H 8880 5101 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 8800 5200 50  0001 C CNN
+F 3 "~" H 8800 5200 50  0001 C CNN
+	1    8800 5200
+	1    0    0    -1  
+$EndComp
+Text Label 8500 5100 0    50   ~ 0
+5V
+Text Label 8300 5200 0    50   ~ 0
+CAN_TX
+Text Label 8300 5300 0    50   ~ 0
+CAN_RX
+Text Label 8400 5400 0    50   ~ 0
+GND
+Wire Wire Line
+	8500 5100 8600 5100
+Wire Wire Line
+	8300 5200 8600 5200
+Wire Wire Line
+	8300 5300 8600 5300
+Wire Wire Line
+	8400 5400 8600 5400
+$Comp
+L Interface_CAN_LIN:TJA1051T U1
+U 1 1 6130219A
+P 2950 6050
+F 0 "U1" H 2950 6631 50  0000 C CNN
+F 1 "TJA1051T" H 2950 6540 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 2950 5550 50  0001 C CIN
+F 3 "http://www.nxp.com/documents/data_sheet/TJA1051.pdf" H 2950 6050 50  0001 C CNN
+	1    2950 6050
+	1    0    0    -1  
+$EndComp
+Text Label 2650 5650 0    50   ~ 0
+5V
+Wire Wire Line
+	2650 5650 2950 5650
+Text Label 2150 5850 0    50   ~ 0
+CAN_TX
+Text Label 2150 5950 0    50   ~ 0
+CAN_RX
+Wire Wire Line
+	2150 5850 2450 5850
+Wire Wire Line
+	2150 5950 2450 5950
+$Comp
+L power:GND #PWR0101
+U 1 1 6133E367
+P 2950 6650
+F 0 "#PWR0101" H 2950 6400 50  0001 C CNN
+F 1 "GND" H 2955 6477 50  0000 C CNN
+F 2 "" H 2950 6650 50  0001 C CNN
+F 3 "" H 2950 6650 50  0001 C CNN
+	1    2950 6650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 6450 2950 6550
+Wire Wire Line
+	2450 6250 2450 6550
+Wire Wire Line
+	2450 6550 2950 6550
+Connection ~ 2950 6550
+Wire Wire Line
+	2950 6550 2950 6650
+$Comp
+L power:GND #PWR0102
+U 1 1 61366BE3
+P 1400 6000
+F 0 "#PWR0102" H 1400 5750 50  0001 C CNN
+F 1 "GND" H 1405 5827 50  0000 C CNN
+F 2 "" H 1400 6000 50  0001 C CNN
+F 3 "" H 1400 6000 50  0001 C CNN
+	1    1400 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 5850 1400 6000
+$Comp
+L power:GND #PWR0103
+U 1 1 61373107
+P 900 5150
+F 0 "#PWR0103" H 900 4900 50  0001 C CNN
+F 1 "GND" H 905 4977 50  0000 C CNN
+F 2 "" H 900 5150 50  0001 C CNN
+F 3 "" H 900 5150 50  0001 C CNN
+	1    900  5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 4900 900  4900
+Wire Wire Line
+	900  4900 900  5000
+Wire Wire Line
+	1050 5000 900  5000
+Connection ~ 900  5000
+Wire Wire Line
+	900  5000 900  5150
+$Comp
+L power:GND #PWR0104
+U 1 1 6138B489
+P 2200 3200
+F 0 "#PWR0104" H 2200 2950 50  0001 C CNN
+F 1 "GND" H 2205 3027 50  0000 C CNN
+F 2 "" H 2200 3200 50  0001 C CNN
+F 3 "" H 2200 3200 50  0001 C CNN
+	1    2200 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 3200 2200 3200
+$Comp
+L Device:C C1
+U 1 1 613BC6E9
+P 2000 6700
+F 0 "C1" H 2115 6746 50  0000 L CNN
+F 1 "0.1uF" H 2115 6655 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-2012-12_Kemet-R" H 2038 6550 50  0001 C CNN
+F 3 "~" H 2000 6700 50  0001 C CNN
+	1    2000 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 613BF8B5
+P 2000 6950
+F 0 "#PWR0105" H 2000 6700 50  0001 C CNN
+F 1 "GND" H 2005 6777 50  0000 C CNN
+F 2 "" H 2000 6950 50  0001 C CNN
+F 3 "" H 2000 6950 50  0001 C CNN
+	1    2000 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 6850 2000 6950
+Wire Wire Line
+	2000 5750 2000 6550
+Wire Wire Line
+	1400 5750 2000 5750
+$Comp
+L Device:R_US R1
+U 1 1 613E7063
+P 3900 5950
+F 0 "R1" V 3695 5950 50  0000 C CNN
+F 1 "0R" V 3786 5950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3940 5940 50  0001 C CNN
+F 3 "~" H 3900 5950 50  0001 C CNN
+	1    3900 5950
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R2
+U 1 1 613E7A6D
+P 3900 6150
+F 0 "R2" V 3695 6150 50  0000 C CNN
+F 1 "0R" V 3786 6150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3940 6140 50  0001 C CNN
+F 3 "~" H 3900 6150 50  0001 C CNN
+	1    3900 6150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3450 5950 3750 5950
+Wire Wire Line
+	3450 6150 3750 6150
+$Comp
+L Device:R_US R3
+U 1 1 614009E0
+P 4550 5900
+F 0 "R3" H 4482 5854 50  0000 R CNN
+F 1 "120R" H 4482 5945 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4590 5890 50  0001 C CNN
+F 3 "~" H 4550 5900 50  0001 C CNN
+	1    4550 5900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 6140153D
+P 4200 6500
+F 0 "C2" H 4315 6546 50  0000 L CNN
+F 1 "30pF" H 4315 6455 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-2012-12_Kemet-R" H 4238 6350 50  0001 C CNN
+F 3 "~" H 4200 6500 50  0001 C CNN
+	1    4200 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 61401CF3
+P 4550 6500
+F 0 "C3" H 4665 6546 50  0000 L CNN
+F 1 "30pF" H 4665 6455 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-2012-12_Kemet-R" H 4588 6350 50  0001 C CNN
+F 3 "~" H 4550 6500 50  0001 C CNN
+	1    4550 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 614025E2
+P 4200 6850
+F 0 "#PWR?" H 4200 6600 50  0001 C CNN
+F 1 "GND" H 4205 6677 50  0000 C CNN
+F 2 "" H 4200 6850 50  0001 C CNN
+F 3 "" H 4200 6850 50  0001 C CNN
+	1    4200 6850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 6650 4200 6850
+Connection ~ 4200 6650
+Wire Wire Line
+	4050 5950 4200 5950
+Wire Wire Line
+	4200 5950 4200 5750
+Wire Wire Line
+	4200 5750 4550 5750
+Wire Wire Line
+	4050 6150 4550 6150
+Wire Wire Line
+	4550 6150 4550 6050
+Wire Wire Line
+	4550 6650 4200 6650
+Wire Wire Line
+	4550 6150 4550 6350
+Connection ~ 4550 6150
+Wire Wire Line
+	4200 5950 4200 6350
+Connection ~ 4200 5950
+$Comp
+L Connector_Generic:Conn_01x02 Can2
+U 1 1 6146CD42
+P 5250 6050
+F 0 "Can2" H 5330 5996 50  0000 L CNN
+F 1 "Conn_01x02" H 5330 5951 50  0001 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 5250 6050 50  0001 C CNN
+F 3 "~" H 5250 6050 50  0001 C CNN
+	1    5250 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 5750 4850 5750
+Wire Wire Line
+	4850 5750 4850 6050
+Wire Wire Line
+	4850 6050 5050 6050
+Connection ~ 4550 5750
+Wire Wire Line
+	4550 6150 5050 6150
 $EndSCHEMATC
