@@ -164,8 +164,6 @@ $EndComp
 Wire Wire Line
 	2500 7250 2850 7250
 Connection ~ 2850 7250
-Wire Wire Line
-	2500 6800 2500 6700
 $Comp
 L power:GND #PWR0124
 U 1 1 612199B0
@@ -188,25 +186,17 @@ Wire Wire Line
 $Comp
 L Device:R R?
 U 1 1 6121D415
-P 2850 6650
+P 3450 6650
 AR Path="/6121200F/6121D415" Ref="R?"  Part="1" 
 AR Path="/61233186/6121D415" Ref="R?"  Part="1" 
 AR Path="/6121D415" Ref="R3"  Part="1" 
-F 0 "R3" V 2850 6650 50  0000 C CNN
-F 1 "120R" V 2750 6650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 2780 6650 50  0001 C CNN
-F 3 "~" H 2850 6650 50  0001 C CNN
-	1    2850 6650
+F 0 "R3" V 3450 6650 50  0000 C CNN
+F 1 "120R" V 3350 6650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3380 6650 50  0001 C CNN
+F 3 "~" H 3450 6650 50  0001 C CNN
+	1    3450 6650
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	2500 6800 2850 6800
-Wire Wire Line
-	2500 6950 2500 6800
-Connection ~ 2500 6800
-Wire Wire Line
-	2850 6950 2850 6800
-Connection ~ 2850 6800
 $Comp
 L Diode:1N5817 D1
 U 1 1 61221670
@@ -224,31 +214,29 @@ Connection ~ 2850 6500
 Wire Wire Line
 	3450 6800 3450 6950
 Wire Wire Line
-	2850 6800 3450 6800
-Wire Wire Line
 	3750 6500 3750 6950
 Wire Wire Line
-	2850 6500 3750 6500
+	2850 6500 3450 6500
 Wire Wire Line
 	2850 7250 3450 7250
 Connection ~ 3450 7250
 Wire Wire Line
 	3450 7250 3750 7250
 $Comp
-L Connector_Generic:Conn_01x02 J1
+L Connector_Generic:Conn_01x02 CAN1
 U 1 1 6122D1A7
 P 4750 6600
-F 0 "J1" H 4830 6592 50  0000 L CNN
+F 0 "CAN1" H 4830 6592 50  0000 L CNN
 F 1 "Conn_01x02" H 4830 6501 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 4750 6600 50  0001 C CNN
+F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_2-G-3.81_1x02_P3.81mm_Vertical" H 4750 6600 50  0001 C CNN
 F 3 "~" H 4750 6600 50  0001 C CNN
 	1    4750 6600
 	1    0    0    -1  
 $EndComp
 Text Label 4450 6600 2    50   ~ 0
-CANH
-Text Label 4450 6700 2    50   ~ 0
 CANL
+Text Label 4450 6700 2    50   ~ 0
+CANH
 Wire Wire Line
 	4450 6600 4550 6600
 Wire Wire Line
@@ -262,7 +250,6 @@ Wire Wire Line
 Connection ~ 3750 6500
 Wire Wire Line
 	3850 6800 3450 6800
-Connection ~ 3450 6800
 $Comp
 L Diode:1N5817 D2
 U 1 1 61231184
@@ -280,7 +267,7 @@ U 1 1 6123C89C
 P 1050 1850
 F 0 "POWER1" H 968 1617 50  0000 C CNN
 F 1 "Conn_01x02" H 968 1616 50  0001 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 1050 1850 50  0001 C CNN
+F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_2-G-3.81_1x02_P3.81mm_Vertical" H 1050 1850 50  0001 C CNN
 F 3 "~" H 1050 1850 50  0001 C CNN
 	1    1050 1850
 	-1   0    0    1   
@@ -334,7 +321,7 @@ U 1 1 612416CA
 P 1050 3100
 F 0 "POWER2" H 968 2867 50  0000 C CNN
 F 1 "Conn_01x02" H 968 2866 50  0001 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 1050 3100 50  0001 C CNN
+F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_2-G-3.81_1x02_P3.81mm_Vertical" H 1050 3100 50  0001 C CNN
 F 3 "~" H 1050 3100 50  0001 C CNN
 	1    1050 3100
 	-1   0    0    1   
@@ -502,14 +489,152 @@ Text GLabel 1900 4450 1    50   Input ~ 0
 Wire Wire Line
 	1900 4550 1900 4450
 $Comp
-L power:GNDA #PWR?
+L power:GNDA #PWR0102
 U 1 1 6130E8F7
 P 1900 3600
-F 0 "#PWR?" H 1900 3350 50  0001 C CNN
+F 0 "#PWR0102" H 1900 3350 50  0001 C CNN
 F 1 "GNDA" H 1905 3427 50  0000 C CNN
 F 2 "" H 1900 3600 50  0001 C CNN
 F 3 "" H 1900 3600 50  0001 C CNN
 	1    1900 3600
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:R RB?
+U 1 1 612B47DD
+P 3250 4350
+AR Path="/6121200F/612B47DD" Ref="RB?"  Part="1" 
+AR Path="/61233186/612B47DD" Ref="RB?"  Part="1" 
+AR Path="/612B47DD" Ref="R4"  Part="1" 
+F 0 "R4" V 3043 4350 50  0000 C CNN
+F 1 "10K" V 3134 4350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3180 4350 50  0001 C CNN
+F 3 "~" H 3250 4350 50  0001 C CNN
+	1    3250 4350
+	-1   0    0    1   
+$EndComp
+Text GLabel 3250 4150 1    50   Input ~ 0
++3.3V
+$Comp
+L Device:C C11
+U 1 1 612B47E4
+P 3250 4750
+AR Path="/612B47E4" Ref="C11"  Part="1" 
+AR Path="/6121200F/612B47E4" Ref="CB?"  Part="1" 
+AR Path="/61228324/612B47E4" Ref="CB?"  Part="1" 
+AR Path="/61233186/612B47E4" Ref="CB?"  Part="1" 
+F 0 "C11" H 3365 4796 50  0000 L CNN
+F 1 "10pF" H 3365 4705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 3288 4600 50  0001 C CNN
+F 3 "~" H 3250 4750 50  0001 C CNN
+	1    3250 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0148
+U 1 1 612B47EA
+P 3250 4950
+AR Path="/612B47EA" Ref="#PWR0148"  Part="1" 
+AR Path="/6121200F/612B47EA" Ref="#PWR?"  Part="1" 
+AR Path="/61228324/612B47EA" Ref="#PWR?"  Part="1" 
+AR Path="/61233186/612B47EA" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0148" H 3250 4700 50  0001 C CNN
+F 1 "GND" H 3255 4777 50  0000 C CNN
+F 2 "" H 3250 4950 50  0001 C CNN
+F 3 "" H 3250 4950 50  0001 C CNN
+	1    3250 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 4500 3250 4550
+$Comp
+L Switch:SW_Push SW?
+U 1 1 612B47F1
+P 2850 4750
+AR Path="/61233186/612B47F1" Ref="SW?"  Part="1" 
+AR Path="/612B47F1" Ref="SW1"  Part="1" 
+F 0 "SW1" V 2850 4702 50  0000 R CNN
+F 1 "SW_Push" V 2805 4702 50  0001 R CNN
+F 2 "Button_Switch_SMD:SW_SPST_B3U-1000P" H 2850 4950 50  0001 C CNN
+F 3 "~" H 2850 4950 50  0001 C CNN
+	1    2850 4750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3250 4150 3250 4200
+Wire Wire Line
+	2850 4550 3250 4550
+Connection ~ 3250 4550
+Wire Wire Line
+	3250 4550 3250 4600
+Wire Wire Line
+	2850 4950 3250 4950
+Wire Wire Line
+	3250 4900 3250 4950
+Connection ~ 3250 4950
+Text GLabel 3600 4550 2    50   Input ~ 0
+RESET
+Wire Wire Line
+	3600 4550 3250 4550
+$Comp
+L Device:R R?
+U 1 1 612C67F0
+P 4150 4350
+AR Path="/6121200F/612C67F0" Ref="R?"  Part="1" 
+AR Path="/61233186/612C67F0" Ref="R?"  Part="1" 
+AR Path="/612C67F0" Ref="R5"  Part="1" 
+F 0 "R5" V 3943 4350 50  0000 C CNN
+F 1 "510R" V 4034 4350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4080 4350 50  0001 C CNN
+F 3 "~" H 4150 4350 50  0001 C CNN
+	1    4150 4350
+	-1   0    0    1   
+$EndComp
+Text GLabel 4150 4150 1    50   Input ~ 0
++3.3V
+$Comp
+L power:GND #PWR0149
+U 1 1 612C6A7B
+P 4150 4950
+AR Path="/612C6A7B" Ref="#PWR0149"  Part="1" 
+AR Path="/6121200F/612C6A7B" Ref="#PWR?"  Part="1" 
+AR Path="/61228324/612C6A7B" Ref="#PWR?"  Part="1" 
+AR Path="/61233186/612C6A7B" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0149" H 4150 4700 50  0001 C CNN
+F 1 "GND" H 4155 4777 50  0000 C CNN
+F 2 "" H 4150 4950 50  0001 C CNN
+F 3 "" H 4150 4950 50  0001 C CNN
+	1    4150 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 4150 4150 4200
+Wire Wire Line
+	4150 4900 4150 4950
+Wire Wire Line
+	4150 4500 4150 4600
+$Comp
+L Device:LED LED1
+U 1 1 612CA3A2
+P 4150 4750
+F 0 "LED1" V 4189 4632 50  0000 R CNN
+F 1 "LED" V 4098 4632 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 4150 4750 50  0001 C CNN
+F 3 "~" H 4150 4750 50  0001 C CNN
+	1    4150 4750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2500 6700 2500 6800
+Connection ~ 3450 6800
+Connection ~ 3450 6500
+Wire Wire Line
+	3450 6500 3750 6500
+Wire Wire Line
+	2850 6500 2850 6950
+Wire Wire Line
+	3450 6800 2500 6800
+Connection ~ 2500 6800
+Wire Wire Line
+	2500 6800 2500 6950
 $EndSCHEMATC
