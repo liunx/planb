@@ -105,19 +105,6 @@ Wire Wire Line
 Wire Wire Line
 	2500 2550 2800 2550
 $Comp
-L Device:Crystal YA?
-U 1 1 61262268
-P 1100 3700
-AR Path="/6121200F/61262268" Ref="YA?"  Part="1" 
-AR Path="/61233186/61262268" Ref="YB1"  Part="1" 
-F 0 "YB1" V 1054 3831 50  0000 L CNN
-F 1 "8MHZ" V 1145 3831 50  0000 L CNN
-F 2 "Crystal:Crystal_HC18-U_Vertical" H 1100 3700 50  0001 C CNN
-F 3 "~" H 1100 3700 50  0001 C CNN
-	1    1100 3700
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:C CA?
 U 1 1 6126226E
 P 850 3500
@@ -157,15 +144,11 @@ Wire Wire Line
 	1000 3900 1100 3900
 Wire Wire Line
 	1100 3900 1100 3850
-Text Label 1200 3500 0    50   ~ 0
+Text Label 1550 3500 0    50   ~ 0
 RCC_OSC_IN
-Text Label 1200 3900 0    50   ~ 0
+Text Label 1550 3900 0    50   ~ 0
 RCC_OSC_OUT
-Wire Wire Line
-	1200 3500 1100 3500
 Connection ~ 1100 3500
-Wire Wire Line
-	1200 3900 1100 3900
 Connection ~ 1100 3900
 Text Label 3900 2550 2    50   ~ 0
 RCC_OSC_IN
@@ -223,10 +206,7 @@ V3.3
 Wire Wire Line
 	950  4300 1550 4300
 Wire Wire Line
-	1550 4600 950  4600
-Wire Wire Line
-	950  4850 950  4600
-Connection ~ 950  4600
+	1550 4600 1000 4600
 Text Label 1200 4400 0    50   ~ 0
 SYS_JTMS-SWDIO
 Text Label 1200 4500 0    50   ~ 0
@@ -270,64 +250,64 @@ F031_RX
 $Comp
 L Device:Crystal_GND23 YB2
 U 1 1 611DE5D3
-P 2100 3700
-F 0 "YB2" V 2054 3944 50  0000 L CNN
-F 1 "32768HZ" V 2145 3944 50  0000 L CNN
-F 2 "Crystal:Crystal_SMD_Abracon_ABS25-4Pin_8.0x3.8mm" H 2100 3700 50  0001 C CNN
-F 3 "~" H 2100 3700 50  0001 C CNN
-	1    2100 3700
+P 2500 3700
+F 0 "YB2" V 2454 3944 50  0000 L CNN
+F 1 "32768HZ" V 2545 3944 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_Abracon_ABS25-4Pin_8.0x3.8mm" H 2500 3700 50  0001 C CNN
+F 3 "~" H 2500 3700 50  0001 C CNN
+	1    2500 3700
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:C CA?
 U 1 1 611E09CA
-P 1850 3500
+P 2250 3500
 AR Path="/611E09CA" Ref="CA?"  Part="1" 
 AR Path="/6121200F/611E09CA" Ref="CA?"  Part="1" 
 AR Path="/61228324/611E09CA" Ref="CA?"  Part="1" 
 AR Path="/61233186/611E09CA" Ref="CB9"  Part="1" 
-F 0 "CB9" H 1965 3546 50  0000 L CNN
-F 1 "20pF" H 1965 3455 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1888 3350 50  0001 C CNN
-F 3 "~" H 1850 3500 50  0001 C CNN
-	1    1850 3500
+F 0 "CB9" H 2365 3546 50  0000 L CNN
+F 1 "20pF" H 2365 3455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2288 3350 50  0001 C CNN
+F 3 "~" H 2250 3500 50  0001 C CNN
+	1    2250 3500
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:C CA?
 U 1 1 611E09D4
-P 1850 3900
+P 2250 3900
 AR Path="/611E09D4" Ref="CA?"  Part="1" 
 AR Path="/6121200F/611E09D4" Ref="CA?"  Part="1" 
 AR Path="/61228324/611E09D4" Ref="CA?"  Part="1" 
 AR Path="/61233186/611E09D4" Ref="CB10"  Part="1" 
-F 0 "CB10" H 1965 3946 50  0000 L CNN
-F 1 "20pF" H 1965 3855 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1888 3750 50  0001 C CNN
-F 3 "~" H 1850 3900 50  0001 C CNN
-	1    1850 3900
+F 0 "CB10" H 2365 3946 50  0000 L CNN
+F 1 "20pF" H 2365 3855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2288 3750 50  0001 C CNN
+F 3 "~" H 2250 3900 50  0001 C CNN
+	1    2250 3900
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	1700 3500 1700 3900
+	2100 3500 2100 3900
 Wire Wire Line
-	2000 3500 2100 3500
+	2400 3500 2500 3500
 Wire Wire Line
-	2100 3500 2100 3550
+	2500 3500 2500 3550
 Wire Wire Line
-	2000 3900 2100 3900
+	2400 3900 2500 3900
 Wire Wire Line
-	2100 3900 2100 3850
-Text Label 2200 3500 0    50   ~ 0
+	2500 3900 2500 3850
+Text Label 2600 3500 0    50   ~ 0
 RCC_OSC32_IN
-Text Label 2200 3900 0    50   ~ 0
+Text Label 2600 3900 0    50   ~ 0
 RCC_OSC32_OUT
 Wire Wire Line
-	2200 3500 2100 3500
-Connection ~ 2100 3500
+	2600 3500 2500 3500
+Connection ~ 2500 3500
 Wire Wire Line
-	2200 3900 2100 3900
-Connection ~ 2100 3900
+	2600 3900 2500 3900
+Connection ~ 2500 3900
 Text Label 3950 3150 2    50   ~ 0
 RCC_OSC32_IN
 Text Label 3950 3250 2    50   ~ 0
@@ -513,21 +493,6 @@ VDDA
 Wire Wire Line
 	5000 1950 5000 1850
 Wire Wire Line
-	5100 1850 5000 1850
-$Comp
-L power:+3.3VA #PWR?
-U 1 1 613039DD
-P 5100 1850
-AR Path="/6121200F/613039DD" Ref="#PWR?"  Part="1" 
-AR Path="/61233186/613039DD" Ref="#PWR0129"  Part="1" 
-F 0 "#PWR0129" H 5100 1700 50  0001 C CNN
-F 1 "+3.3VA" H 5115 2023 50  0000 C CNN
-F 2 "" H 5100 1850 50  0001 C CNN
-F 3 "" H 5100 1850 50  0001 C CNN
-	1    5100 1850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
 	5550 1850 5500 1850
 $Comp
 L Device:L LA?
@@ -544,22 +509,6 @@ F 3 "~" H 5350 1850 50  0001 C CNN
 $EndComp
 Text Label 5550 1850 0    50   ~ 0
 V3.3
-Wire Wire Line
-	5200 1850 5100 1850
-Connection ~ 5100 1850
-$Comp
-L power:GNDA #PWR?
-U 1 1 61308A9A
-P 5250 5200
-AR Path="/6121200F/61308A9A" Ref="#PWR?"  Part="1" 
-AR Path="/61233186/61308A9A" Ref="#PWR0130"  Part="1" 
-F 0 "#PWR0130" H 5250 4950 50  0001 C CNN
-F 1 "GNDA" H 5255 5027 50  0000 C CNN
-F 2 "" H 5250 5200 50  0001 C CNN
-F 3 "" H 5250 5200 50  0001 C CNN
-	1    5250 5200
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R RA?
 U 1 1 61308AA0
@@ -774,4 +723,109 @@ Wire Wire Line
 Wire Wire Line
 	4800 1900 4900 1900
 Connection ~ 4800 1900
+$Comp
+L Device:R RA?
+U 1 1 6125AD0F
+P 1500 3700
+AR Path="/6121200F/6125AD0F" Ref="RA?"  Part="1" 
+AR Path="/61233186/6125AD0F" Ref="RB4"  Part="1" 
+F 0 "RB4" V 1293 3700 50  0000 C CNN
+F 1 "10M" V 1384 3700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1430 3700 50  0001 C CNN
+F 3 "~" H 1500 3700 50  0001 C CNN
+	1    1500 3700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1100 3500 1500 3500
+Wire Wire Line
+	1100 3900 1500 3900
+Wire Wire Line
+	1500 3550 1500 3500
+Connection ~ 1500 3500
+Wire Wire Line
+	1500 3500 1550 3500
+Wire Wire Line
+	1500 3850 1500 3900
+Connection ~ 1500 3900
+Wire Wire Line
+	1500 3900 1550 3900
+$Comp
+L power:GND #PWR?
+U 1 1 61267254
+P 700 3950
+AR Path="/61267254" Ref="#PWR?"  Part="1" 
+AR Path="/6121200F/61267254" Ref="#PWR?"  Part="1" 
+AR Path="/61228324/61267254" Ref="#PWR?"  Part="1" 
+AR Path="/61233186/61267254" Ref="#PWR0118"  Part="1" 
+F 0 "#PWR0118" H 700 3700 50  0001 C CNN
+F 1 "GND" H 705 3777 50  0000 C CNN
+F 2 "" H 700 3950 50  0001 C CNN
+F 3 "" H 700 3950 50  0001 C CNN
+	1    700  3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 612676CC
+P 2100 3950
+AR Path="/612676CC" Ref="#PWR?"  Part="1" 
+AR Path="/6121200F/612676CC" Ref="#PWR?"  Part="1" 
+AR Path="/61228324/612676CC" Ref="#PWR?"  Part="1" 
+AR Path="/61233186/612676CC" Ref="#PWR0150"  Part="1" 
+F 0 "#PWR0150" H 2100 3700 50  0001 C CNN
+F 1 "GND" H 2105 3777 50  0000 C CNN
+F 2 "" H 2100 3950 50  0001 C CNN
+F 3 "" H 2100 3950 50  0001 C CNN
+	1    2100 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	700  3950 700  3900
+Connection ~ 700  3900
+Wire Wire Line
+	2100 3950 2100 3900
+Connection ~ 2100 3900
+$Comp
+L power:GND #PWR?
+U 1 1 6129D483
+P 1000 4650
+AR Path="/6129D483" Ref="#PWR?"  Part="1" 
+AR Path="/6121200F/6129D483" Ref="#PWR?"  Part="1" 
+AR Path="/61228324/6129D483" Ref="#PWR?"  Part="1" 
+AR Path="/61233186/6129D483" Ref="#PWR0151"  Part="1" 
+F 0 "#PWR0151" H 1000 4400 50  0001 C CNN
+F 1 "GND" H 1005 4477 50  0000 C CNN
+F 2 "" H 1000 4650 50  0001 C CNN
+F 3 "" H 1000 4650 50  0001 C CNN
+	1    1000 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 4650 1000 4600
+Connection ~ 1000 4600
+Wire Wire Line
+	1000 4600 950  4600
+$Comp
+L Device:Crystal_GND23 YB1
+U 1 1 613D3F65
+P 1100 3700
+F 0 "YB1" V 1054 3944 50  0000 L CNN
+F 1 "8M" V 1145 3944 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_Abracon_ABM8G-4Pin_3.2x2.5mm" H 1100 3700 50  0001 C CNN
+F 3 "~" H 1100 3700 50  0001 C CNN
+	1    1100 3700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5000 1850 5150 1850
+Text Label 5150 1750 1    50   ~ 0
+3.3VA
+Wire Wire Line
+	5150 1750 5150 1850
+Connection ~ 5150 1850
+Wire Wire Line
+	5150 1850 5200 1850
+Text Label 5250 5200 0    50   ~ 0
+GNDA
 $EndSCHEMATC
