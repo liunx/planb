@@ -324,12 +324,12 @@ Text Label 5550 4950 0    50   ~ 0
 USART1_RX
 Wire Wire Line
 	5400 4950 6000 4950
-Text GLabel 850  1550 0    50   Input ~ 0
-+3.3V
-Text Label 1000 1550 0    50   ~ 0
+Text GLabel 1250 1450 0    50   Input ~ 0
++3.3V_F031
+Text Label 1400 1450 0    50   ~ 0
 V3.3
 Wire Wire Line
-	1000 1550 850  1550
+	1400 1450 1250 1450
 Text Label 4800 1900 1    50   ~ 0
 VDD1
 Text Label 4900 1900 1    50   ~ 0

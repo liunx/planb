@@ -627,14 +627,39 @@ Connection ~ 2500 6800
 Wire Wire Line
 	2500 6800 2500 6950
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0102
 U 1 1 6123DA38
 P 1900 3600
-F 0 "#PWR?" H 1900 3350 50  0001 C CNN
+F 0 "#PWR0102" H 1900 3350 50  0001 C CNN
 F 1 "GND" H 1905 3427 50  0000 C CNN
 F 2 "" H 1900 3600 50  0001 C CNN
 F 3 "" H 1900 3600 50  0001 C CNN
 	1    1900 3600
 	1    0    0    -1  
+$EndComp
+Text GLabel 2250 4150 1    50   Input ~ 0
++3.3V_F031
+Text GLabel 2450 4450 1    50   Input ~ 0
++3.3V_F103
+Wire Wire Line
+	2250 4450 2250 4550
+Connection ~ 2250 4550
+Wire Wire Line
+	2450 4450 2450 4550
+Wire Wire Line
+	2450 4550 2250 4550
+$Comp
+L Device:R R?
+U 1 1 612622B2
+P 2250 4300
+AR Path="/6121200F/612622B2" Ref="R?"  Part="1" 
+AR Path="/61233186/612622B2" Ref="R?"  Part="1" 
+AR Path="/612622B2" Ref="R6"  Part="1" 
+F 0 "R6" V 2250 4300 50  0000 C CNN
+F 1 "0R" V 2150 4300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2180 4300 50  0001 C CNN
+F 3 "~" H 2250 4300 50  0001 C CNN
+	1    2250 4300
+	-1   0    0    1   
 $EndComp
 $EndSCHEMATC
