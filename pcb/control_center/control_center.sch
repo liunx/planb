@@ -201,9 +201,9 @@ $EndComp
 Text Label 1150 4300 2    50   ~ 0
 V3.3
 Text Label 1000 4400 0    50   ~ 0
-SYS_JTMS-SWDIO
+SYS_SWDIO
 Text Label 1000 4500 0    50   ~ 0
-SYS_JTCK-SWCL
+SYS_SWCL
 Text Label 5450 4750 0    50   ~ 0
 SYS_SWDIO
 Text Label 5450 4850 0    50   ~ 0
