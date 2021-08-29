@@ -687,17 +687,6 @@ Wire Wire Line
 Connection ~ 1000 4600
 Wire Wire Line
 	1000 4600 950  4600
-$Comp
-L Device:Crystal_GND23 Y1
-U 1 1 613D3F65
-P 1050 2450
-F 0 "Y1" V 1004 2694 50  0000 L CNN
-F 1 "8M" V 1095 2694 50  0000 L CNN
-F 2 "Crystal:Crystal_SMD_Abracon_ABM8G-4Pin_3.2x2.5mm" H 1050 2450 50  0001 C CNN
-F 3 "~" H 1050 2450 50  0001 C CNN
-	1    1050 2450
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4150 4050 4200 4050
 Wire Wire Line
@@ -986,7 +975,7 @@ $EndComp
 Wire Wire Line
 	2250 7000 2250 7100
 Text Label 2300 6700 0    50   ~ 0
-V3.3
+I2C1_SDA
 Wire Wire Line
 	2250 6700 2300 6700
 $Comp
@@ -1015,7 +1004,7 @@ Wire Wire Line
 Text Label 2300 6800 0    50   ~ 0
 I2C1_SCL
 Text Label 2300 6900 0    50   ~ 0
-I2C1_SDA
+V3.3
 Wire Wire Line
 	2300 6800 2250 6800
 Wire Wire Line
@@ -1653,4 +1642,15 @@ Wire Wire Line
 	4150 4250 4200 4250
 Wire Wire Line
 	4150 4350 4200 4350
+$Comp
+L Device:Crystal_GND24 Y1
+U 1 1 612CA721
+P 1050 2450
+F 0 "Y1" V 1004 2694 50  0000 L CNN
+F 1 "8M" V 1095 2694 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm" H 1050 2450 50  0001 C CNN
+F 3 "~" H 1050 2450 50  0001 C CNN
+	1    1050 2450
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
