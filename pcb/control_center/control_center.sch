@@ -135,7 +135,7 @@ F 3 "~" H 800 2650 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	650  2250 650  2650
+	650  2250 650  2500
 Wire Wire Line
 	950  2250 1050 2250
 Wire Wire Line
@@ -167,21 +167,6 @@ F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 750 4500 50  
 F 3 "~" H 750 4500 50  0001 C CNN
 	1    750  4500
 	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR0102
-U 1 1 61272755
-P 1050 7200
-AR Path="/61272755" Ref="#PWR0102"  Part="1" 
-AR Path="/6121200F/61272755" Ref="#PWR?"  Part="1" 
-AR Path="/61228324/61272755" Ref="#PWR?"  Part="1" 
-AR Path="/61233186/61272755" Ref="#PWR0120"  Part="1" 
-F 0 "#PWR0102" H 1050 6950 50  0001 C CNN
-F 1 "GND" H 1055 7027 50  0000 C CNN
-F 2 "" H 1050 7200 50  0001 C CNN
-F 3 "" H 1050 7200 50  0001 C CNN
-	1    1050 7200
-	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C5
@@ -552,8 +537,6 @@ Text Label 1100 6800 0    50   ~ 0
 RY1
 Text Label 1100 6900 0    50   ~ 0
 RX1
-Text Label 1100 7000 0    50   ~ 0
-V5.0
 Wire Wire Line
 	1050 6700 1100 6700
 Wire Wire Line
@@ -949,8 +932,6 @@ Text Label 1700 6800 0    50   ~ 0
 RY2
 Text Label 1700 6900 0    50   ~ 0
 RX2
-Text Label 1700 7000 0    50   ~ 0
-V5.0
 Wire Wire Line
 	1650 6700 1700 6700
 Wire Wire Line
@@ -978,21 +959,6 @@ Text Label 2300 6700 0    50   ~ 0
 I2C1_SDA
 Wire Wire Line
 	2250 6700 2300 6700
-$Comp
-L power:GND #PWR0117
-U 1 1 612D942A
-P 1650 7200
-AR Path="/612D942A" Ref="#PWR0117"  Part="1" 
-AR Path="/6121200F/612D942A" Ref="#PWR?"  Part="1" 
-AR Path="/61228324/612D942A" Ref="#PWR?"  Part="1" 
-AR Path="/61233186/612D942A" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0117" H 1650 6950 50  0001 C CNN
-F 1 "GND" H 1655 7027 50  0000 C CNN
-F 2 "" H 1650 7200 50  0001 C CNN
-F 3 "" H 1650 7200 50  0001 C CNN
-	1    1650 7200
-	1    0    0    -1  
-$EndComp
 Text Label 4150 2750 2    50   ~ 0
 I2C1_SCL
 Text Label 4150 2850 2    50   ~ 0
@@ -1652,5 +1618,61 @@ F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm" H 1050 2450 50  0001 C CNN
 F 3 "~" H 1050 2450 50  0001 C CNN
 	1    1050 2450
 	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1250 2450 1250 2500
+Wire Wire Line
+	1250 2500 850  2500
+Connection ~ 650  2500
+Wire Wire Line
+	650  2500 650  2650
+Wire Wire Line
+	850  2450 850  2500
+Connection ~ 850  2500
+Wire Wire Line
+	850  2500 650  2500
+$Comp
+L power:+3.3VA #PWR?
+U 1 1 61306031
+P 1100 7000
+F 0 "#PWR?" H 1100 6850 50  0001 C CNN
+F 1 "+3.3VA" H 1115 7173 50  0000 C CNN
+F 2 "" H 1100 7000 50  0001 C CNN
+F 3 "" H 1100 7000 50  0001 C CNN
+	1    1100 7000
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3VA #PWR?
+U 1 1 6131AA74
+P 1700 7000
+F 0 "#PWR?" H 1700 6850 50  0001 C CNN
+F 1 "+3.3VA" H 1715 7173 50  0000 C CNN
+F 2 "" H 1700 7000 50  0001 C CNN
+F 3 "" H 1700 7000 50  0001 C CNN
+	1    1700 7000
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GNDA #PWR?
+U 1 1 6131BABB
+P 1050 7200
+F 0 "#PWR?" H 1050 6950 50  0001 C CNN
+F 1 "GNDA" H 1055 7027 50  0000 C CNN
+F 2 "" H 1050 7200 50  0001 C CNN
+F 3 "" H 1050 7200 50  0001 C CNN
+	1    1050 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDA #PWR?
+U 1 1 6131C109
+P 1650 7200
+F 0 "#PWR?" H 1650 6950 50  0001 C CNN
+F 1 "GNDA" H 1655 7027 50  0000 C CNN
+F 2 "" H 1650 7200 50  0001 C CNN
+F 3 "" H 1650 7200 50  0001 C CNN
+	1    1650 7200
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
