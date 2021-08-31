@@ -179,10 +179,6 @@ Text Label 1000 4400 0    50   ~ 0
 SYS_SWDIO
 Text Label 1000 4500 0    50   ~ 0
 SYS_SWCL
-Text Label 5450 4750 0    50   ~ 0
-PA13
-Text Label 5450 4850 0    50   ~ 0
-PA14
 $Comp
 L MCU_ST_STM32F0:STM32F031C6Tx U1
 U 1 1 612773A3
@@ -1197,16 +1193,12 @@ Text Label 7100 4750 2    50   ~ 0
 PA11
 Text Label 7700 4750 0    50   ~ 0
 PA10
-Text Label 7100 4850 2    50   ~ 0
-PA13
 Text Label 7100 5050 2    50   ~ 0
 PA15
 Text Label 7100 4950 2    50   ~ 0
 PF7
 Text Label 7700 4850 0    50   ~ 0
 PA12
-Text Label 7700 5050 0    50   ~ 0
-PA14
 Text Label 7700 4950 0    50   ~ 0
 PF6
 Wire Wire Line
@@ -1257,14 +1249,8 @@ Text Label 7700 5450 0    50   ~ 0
 PB9
 Wire Wire Line
 	7700 5450 7650 5450
-Text Label 5700 4750 0    50   ~ 0
+Text Label 5450 4750 0    50   ~ 0
 SYS_SWDIO
-Wire Wire Line
-	5400 4750 5700 4750
-Text Label 3900 4850 2    50   ~ 0
-SYS_SWCL
-Wire Wire Line
-	3900 4850 4200 4850
 $Comp
 L Connector_Generic:Conn_02x13_Odd_Even J1
 U 1 1 615E043C
@@ -1450,4 +1436,40 @@ Wire Wire Line
 Wire Wire Line
 	7900 1900 7800 1900
 Connection ~ 7800 1900
+Wire Wire Line
+	4150 4850 4200 4850
+Wire Wire Line
+	5450 4750 5400 4750
+Text Label 5450 4850 0    50   ~ 0
+SYS_SWCL
+$Comp
+L power:GND #PWR?
+U 1 1 6166CB63
+P 7100 4850
+AR Path="/6166CB63" Ref="#PWR?"  Part="1" 
+AR Path="/6121200F/6166CB63" Ref="#PWR?"  Part="1" 
+AR Path="/61228324/6166CB63" Ref="#PWR?"  Part="1" 
+AR Path="/61233186/6166CB63" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7100 4600 50  0001 C CNN
+F 1 "GND" H 7105 4677 50  0000 C CNN
+F 2 "" H 7100 4850 50  0001 C CNN
+F 3 "" H 7100 4850 50  0001 C CNN
+	1    7100 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6166D535
+P 7700 5050
+AR Path="/6166D535" Ref="#PWR?"  Part="1" 
+AR Path="/6121200F/6166D535" Ref="#PWR?"  Part="1" 
+AR Path="/61228324/6166D535" Ref="#PWR?"  Part="1" 
+AR Path="/61233186/6166D535" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7700 4800 50  0001 C CNN
+F 1 "GND" H 7705 4877 50  0000 C CNN
+F 2 "" H 7700 5050 50  0001 C CNN
+F 3 "" H 7700 5050 50  0001 C CNN
+	1    7700 5050
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC
