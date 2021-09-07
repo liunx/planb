@@ -21,6 +21,10 @@ from webots_ros2_core.webots_node import WebotsNode
 
 
 class PlanBDriver(WebotsNode):
+    D1 = 10.0
+    D2 = 20.0
+    D3 = 20.0
+    D4 = 10.0
     def __init__(self, args):
         super().__init__('planb_driver', args)
         self.__servos = {}
@@ -42,6 +46,7 @@ class PlanBDriver(WebotsNode):
 
         # State
         self.__target_twist = Twist()
+        self.__timer = 0.0
 
         # ROS interface
         self.create_subscription(Twist, 'cmd_vel', self.__cmd_vel_callback, 1)
@@ -52,14 +57,57 @@ class PlanBDriver(WebotsNode):
     def log(self, *args):
         self.get_logger().warn(' '.join([str(arg) for arg in args]))
 
+    def servos_steering(self, radius):
+        # left
+        a1 = math.atan(self.D3 / (self.D1 + radius))
+        a2 = 0
+        a3 = -math.atan(self.D2 / (self.D1 + radius))
+        # right
+        a4 = math.atan(self.D3 / (radius - self.D1))
+        a5 = 0
+        a6 = -math.atan(self.D3 / (radius - self.D1))
+
+        self.__servos['fl'].setPosition(a1)
+        self.__servos['ml'].setPosition(a2)
+        self.__servos['tl'].setPosition(a3)
+        self.__servos['fr'].setPosition(a4)
+        self.__servos['mr'].setPosition(a5)
+        self.__servos['tr'].setPosition(a6)
+
+    def motors_driving(self, accel, radius):
+        # left
+        v1 = accel * math.sqrt(self.D3**2 + (self.D1 + radius)**2) / (radius + self.D4)
+        v2 = accel
+        v3 = accel * math.sqrt(self.D2**2 + (self.D1 + radius)**2) / (radius + self.D4)
+        # right
+        v4 = accel * math.sqrt(self.D3**2 + (radius - self.D1)**2) / (radius + self.D4)
+        v5 = accel * (radius - self.D4) / (radius + self.D4)
+        v6 = accel * math.sqrt(self.D2**2 + (radius - self.D1)**2) / (radius + self.D4)
+
+        self.__wheels['fl'].setPosition(self.__timer * (v1/accel) * math.pi)
+        self.__wheels['ml'].setPosition(self.__timer * (v2/accel) * math.pi)
+        self.__wheels['tl'].setPosition(self.__timer * (v3/accel) * math.pi)
+        self.__wheels['fr'].setPosition(self.__timer * (v4/accel) * math.pi)
+        self.__wheels['mr'].setPosition(self.__timer * (v5/accel) * math.pi)
+        self.__wheels['tr'].setPosition(self.__timer * (v6/accel) * math.pi)
+
+
     def step(self, ms):
         super().step(ms)
-        linear_y = self.__target_twist.linear.y
         linear_x = self.__target_twist.linear.x
-        if linear_y != 0:
-            self.log("linear y: {}".format(linear_y))
+        angular_z = self.__target_twist.angular.z
+        radius = 0
+        if angular_z != 0:
+            self.log("angular z: {}".format(angular_z))
+            radius = self.D1 + self.D3 / math.tan(math.radians(abs(angular_z * 30)))
+            self.servos_steering(radius)
         if linear_x != 0:
             self.log("linear x: {}".format(linear_x))
+            self.motors_driving(60*abs(linear_x), radius)
+            self.__timer += ms / 1000.0
+        else:
+            self.__timer = 0.0
+
 
 
 def main(args=None):
