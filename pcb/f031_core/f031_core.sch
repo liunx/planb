@@ -15,8 +15,6 @@ Comment4 ""
 $EndDescr
 Text Label 3900 2350 0    50   ~ 0
 BOOT0
-Text Label 3900 3650 0    50   ~ 0
-BOOT1
 Wire Wire Line
 	3900 2350 4200 2350
 $Comp
@@ -80,7 +78,6 @@ RCC_OSC_IN
 Text Label 1650 2650 0    50   ~ 0
 RCC_OSC_OUT
 Connection ~ 1050 2250
-Connection ~ 1050 2650
 Text Label 4150 2550 2    50   ~ 0
 RCC_OSC_IN
 Text Label 4150 2650 2    50   ~ 0
@@ -136,8 +133,6 @@ Wire Wire Line
 Connection ~ 4800 5200
 Wire Wire Line
 	4800 5200 4800 5150
-Wire Wire Line
-	3900 3650 4200 3650
 $Comp
 L Device:C C3
 U 1 1 611E09CA
@@ -222,21 +217,6 @@ F 1 "1uF" H 5415 1055 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 5338 950 50  0001 C CNN
 F 3 "~" H 5300 1100 50  0001 C CNN
 	1    5300 1100
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0103
-U 1 1 612E8ACF
-P 5300 1350
-AR Path="/612E8ACF" Ref="#PWR0103"  Part="1" 
-AR Path="/6121200F/612E8ACF" Ref="#PWR?"  Part="1" 
-AR Path="/61228324/612E8ACF" Ref="#PWR?"  Part="1" 
-AR Path="/61233186/612E8ACF" Ref="#PWR0121"  Part="1" 
-F 0 "#PWR0103" H 5300 1100 50  0001 C CNN
-F 1 "GND" H 5305 1177 50  0000 C CNN
-F 2 "" H 5300 1350 50  0001 C CNN
-F 3 "" H 5300 1350 50  0001 C CNN
-	1    5300 1350
 	1    0    0    -1  
 $EndComp
 Text Label 5300 750  3    50   ~ 0
@@ -435,16 +415,16 @@ Wire Wire Line
 $Comp
 L Device:R RA?
 U 1 1 6125AD0F
-P 1550 2450
+P 1300 2650
 AR Path="/6121200F/6125AD0F" Ref="RA?"  Part="1" 
 AR Path="/61233186/6125AD0F" Ref="RB4"  Part="1" 
 AR Path="/6125AD0F" Ref="R2"  Part="1" 
-F 0 "R2" V 1343 2450 50  0000 C CNN
-F 1 "390" V 1434 2450 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 1480 2450 50  0001 C CNN
-F 3 "~" H 1550 2450 50  0001 C CNN
-	1    1550 2450
-	-1   0    0    1   
+F 0 "R2" V 1093 2650 50  0000 C CNN
+F 1 "390" V 1184 2650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 1230 2650 50  0001 C CNN
+F 3 "~" H 1300 2650 50  0001 C CNN
+	1    1300 2650
+	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR0109
@@ -545,20 +525,6 @@ Wire Wire Line
 	4900 5200 4900 5250
 Wire Wire Line
 	5450 4850 5400 4850
-Wire Wire Line
-	1050 2250 1550 2250
-Wire Wire Line
-	1050 2650 1550 2650
-Wire Wire Line
-	1550 2300 1550 2250
-Connection ~ 1550 2250
-Wire Wire Line
-	1550 2250 1650 2250
-Wire Wire Line
-	1550 2600 1550 2650
-Connection ~ 1550 2650
-Wire Wire Line
-	1550 2650 1650 2650
 Wire Wire Line
 	950  3300 1250 3300
 Wire Wire Line
@@ -710,10 +676,7 @@ Wire Wire Line
 	1250 6950 1250 6900
 Connection ~ 1250 6900
 Wire Wire Line
-	950  7300 1250 7300
-Wire Wire Line
 	1250 7250 1250 7300
-Connection ~ 1250 7300
 Text GLabel 1400 6900 2    50   Input ~ 0
 RESET
 Wire Wire Line
@@ -1030,40 +993,6 @@ Wire Wire Line
 Wire Wire Line
 	5300 1900 5000 1900
 Connection ~ 5300 1900
-Text Label 4700 1950 2    50   ~ 0
-VBAT
-Text Label 2600 1000 2    50   ~ 0
-VBAT
-$Comp
-L Switch:SW_DPDT_x2 SW2
-U 1 1 6152A531
-P 2750 1200
-F 0 "SW2" V 2750 1348 50  0000 L CNN
-F 1 "SW_DPDT_x2" H 2750 1394 50  0001 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 2750 1200 50  0001 C CNN
-F 3 "~" H 2750 1200 50  0001 C CNN
-	1    2750 1200
-	0    1    1    0   
-$EndComp
-$Comp
-L power:+3.3V #PWR0120
-U 1 1 6152A545
-P 2650 1450
-F 0 "#PWR0120" H 2650 1300 50  0001 C CNN
-F 1 "+3.3V" H 2665 1623 50  0000 C CNN
-F 2 "" H 2650 1450 50  0001 C CNN
-F 3 "" H 2650 1450 50  0001 C CNN
-	1    2650 1450
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2850 1450 2850 1400
-Wire Wire Line
-	2650 1450 2650 1400
-Wire Wire Line
-	2600 1000 2750 1000
-Text GLabel 2850 1450 3    50   Input ~ 0
-VBAT
 Wire Wire Line
 	1900 5550 2350 5550
 $Comp
@@ -1084,4 +1013,228 @@ $EndComp
 Connection ~ 2350 5550
 Wire Wire Line
 	2350 5550 2450 5550
+$Comp
+L Connector_Generic:Conn_02x20_Odd_Even J1
+U 1 1 6142F094
+P 7500 3400
+F 0 "J1" H 7550 4517 50  0000 C CNN
+F 1 "Conn_02x20_Odd_Even" H 7550 4426 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Horizontal" H 7500 3400 50  0001 C CNN
+F 3 "~" H 7500 3400 50  0001 C CNN
+	1    7500 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDA #PWR0103
+U 1 1 6148FD50
+P 5300 1350
+F 0 "#PWR0103" H 5300 1100 50  0001 C CNN
+F 1 "GNDA" H 5305 1177 50  0000 C CNN
+F 2 "" H 5300 1350 50  0001 C CNN
+F 3 "" H 5300 1350 50  0001 C CNN
+	1    5300 1350
+	1    0    0    -1  
+$EndComp
+Text Label 7250 2500 2    50   ~ 0
+PA0
+Wire Wire Line
+	7250 2500 7300 2500
+Text Label 7850 2500 0    50   ~ 0
+PA1
+Wire Wire Line
+	7850 2500 7800 2500
+Text Label 7250 2600 2    50   ~ 0
+PA2
+Wire Wire Line
+	7250 2600 7300 2600
+Text Label 7850 2600 0    50   ~ 0
+PA3
+Text Label 7250 2700 2    50   ~ 0
+PA4
+Text Label 7250 2800 2    50   ~ 0
+PA6
+Text Label 7850 2700 0    50   ~ 0
+PA5
+Text Label 7850 2800 0    50   ~ 0
+PA7
+Wire Wire Line
+	7800 2600 7850 2600
+Wire Wire Line
+	7800 2700 7850 2700
+Wire Wire Line
+	7800 2800 7850 2800
+Wire Wire Line
+	7300 2700 7250 2700
+Wire Wire Line
+	7300 2800 7250 2800
+$Comp
+L power:GNDA #PWR0121
+U 1 1 6152B21D
+P 7200 2900
+F 0 "#PWR0121" H 7200 2650 50  0001 C CNN
+F 1 "GNDA" H 7205 2727 50  0000 C CNN
+F 2 "" H 7200 2900 50  0001 C CNN
+F 3 "" H 7200 2900 50  0001 C CNN
+	1    7200 2900
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3VA #PWR0122
+U 1 1 6152DA9A
+P 7900 2900
+F 0 "#PWR0122" H 7900 2750 50  0001 C CNN
+F 1 "+3.3VA" H 7915 3073 50  0000 C CNN
+F 2 "" H 7900 2900 50  0001 C CNN
+F 3 "" H 7900 2900 50  0001 C CNN
+	1    7900 2900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7200 2900 7300 2900
+Wire Wire Line
+	7900 2900 7800 2900
+Text Label 4150 3650 2    50   ~ 0
+PB2
+Wire Wire Line
+	4150 3650 4200 3650
+Text Label 7250 3000 2    50   ~ 0
+PB0
+Text Label 7850 3000 0    50   ~ 0
+PB1
+Text Label 7250 3100 2    50   ~ 0
+PB2
+Wire Wire Line
+	7250 3000 7300 3000
+Wire Wire Line
+	7800 3000 7850 3000
+Wire Wire Line
+	7250 3100 7300 3100
+Text Label 7250 3200 2    50   ~ 0
+PB11
+Text Label 7850 3100 0    50   ~ 0
+PB10
+Wire Wire Line
+	7800 3100 7850 3100
+Wire Wire Line
+	7250 3200 7300 3200
+Text Label 7850 3200 0    50   ~ 0
+PB12
+Text Label 7250 3300 2    50   ~ 0
+PB13
+Text Label 7850 3300 0    50   ~ 0
+PB14
+Text Label 7250 3400 2    50   ~ 0
+PB15
+Wire Wire Line
+	7250 3300 7300 3300
+Wire Wire Line
+	7250 3400 7300 3400
+Wire Wire Line
+	7800 3200 7850 3200
+Wire Wire Line
+	7800 3300 7850 3300
+Text Label 7850 3400 0    50   ~ 0
+PA8
+Text Label 7250 3500 2    50   ~ 0
+PA9
+Text Label 7850 3500 0    50   ~ 0
+PA10
+Text Label 7250 3600 2    50   ~ 0
+PA11
+Text Label 7850 3600 0    50   ~ 0
+PA12
+Wire Wire Line
+	7250 3500 7300 3500
+Wire Wire Line
+	7800 3400 7850 3400
+Wire Wire Line
+	7800 3500 7850 3500
+Wire Wire Line
+	7800 3600 7850 3600
+Wire Wire Line
+	7300 3600 7250 3600
+Text Label 7250 3700 2    50   ~ 0
+PF6
+Text Label 7850 3700 0    50   ~ 0
+PF7
+Wire Wire Line
+	7250 3700 7300 3700
+Wire Wire Line
+	7800 3700 7850 3700
+Text Label 7250 3800 2    50   ~ 0
+PA15
+Text Label 7850 3800 0    50   ~ 0
+PB3
+Text Label 7250 3900 2    50   ~ 0
+PB4
+Text Label 7850 3900 0    50   ~ 0
+PB5
+Text Label 7250 4000 2    50   ~ 0
+PB6
+Text Label 7850 4000 0    50   ~ 0
+PB7
+Text Label 7250 4100 2    50   ~ 0
+PB8
+Text Label 7850 4100 0    50   ~ 0
+PB9
+Wire Wire Line
+	7250 3800 7300 3800
+Wire Wire Line
+	7800 3800 7850 3800
+Wire Wire Line
+	7250 3900 7300 3900
+Wire Wire Line
+	7250 4000 7300 4000
+Wire Wire Line
+	7250 4100 7300 4100
+Wire Wire Line
+	7800 3900 7850 3900
+Wire Wire Line
+	7800 4000 7850 4000
+Wire Wire Line
+	7800 4100 7850 4100
+Wire Wire Line
+	4700 1950 4700 1900
+Wire Wire Line
+	4700 1900 4800 1900
+Wire Wire Line
+	1050 2250 1650 2250
+Wire Wire Line
+	1150 2650 1050 2650
+Connection ~ 1050 2650
+Wire Wire Line
+	1450 2650 1650 2650
+$Comp
+L power:VCC #PWR0120
+U 1 1 61714168
+P 7950 4200
+F 0 "#PWR0120" H 7950 4050 50  0001 C CNN
+F 1 "VCC" H 7965 4373 50  0000 C CNN
+F 2 "" H 7950 4200 50  0001 C CNN
+F 3 "" H 7950 4200 50  0001 C CNN
+	1    7950 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0123
+U 1 1 6171750A
+P 7100 4200
+AR Path="/6171750A" Ref="#PWR0123"  Part="1" 
+AR Path="/6121200F/6171750A" Ref="#PWR?"  Part="1" 
+AR Path="/61228324/6171750A" Ref="#PWR?"  Part="1" 
+AR Path="/61233186/6171750A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0123" H 7100 3950 50  0001 C CNN
+F 1 "GND" H 7105 4027 50  0000 C CNN
+F 2 "" H 7100 4200 50  0001 C CNN
+F 3 "" H 7100 4200 50  0001 C CNN
+	1    7100 4200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7800 4200 7950 4200
+Wire Wire Line
+	7300 4200 7100 4200
+Wire Wire Line
+	950  7300 1250 7300
+Connection ~ 1250 7300
 $EndSCHEMATC
