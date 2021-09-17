@@ -573,49 +573,6 @@ Wire Wire Line
 Wire Wire Line
 	850  1550 850  1600
 $Comp
-L power:GND #PWR?
-U 1 1 61459285
-P 5350 2950
-AR Path="/61459285" Ref="#PWR?"  Part="1" 
-AR Path="/6121200F/61459285" Ref="#PWR?"  Part="1" 
-AR Path="/61228324/61459285" Ref="#PWR?"  Part="1" 
-AR Path="/61233186/61459285" Ref="#PWR?"  Part="1" 
-AR Path="/61447CB7/61459285" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5350 2700 50  0001 C CNN
-F 1 "GND" H 5355 2777 50  0000 C CNN
-F 2 "" H 5350 2950 50  0001 C CNN
-F 3 "" H 5350 2950 50  0001 C CNN
-	1    5350 2950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x04 LCD?
-U 1 1 6145928B
-P 5150 2750
-AR Path="/61447CB7/6145928B" Ref="LCD?"  Part="1" 
-AR Path="/6145928B" Ref="LCD1"  Part="1" 
-F 0 "LCD1" H 5068 2417 50  0000 C CNN
-F 1 "Conn_01x04" H 5068 2416 50  0001 C CNN
-F 2 "control_center:OLED0.91Inch" H 5150 2750 50  0001 C CNN
-F 3 "~" H 5150 2750 50  0001 C CNN
-	1    5150 2750
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	5350 2850 5350 2950
-Text Label 5400 2550 0    50   ~ 0
-I2C1_SDA
-Wire Wire Line
-	5350 2550 5400 2550
-Text Label 5400 2650 0    50   ~ 0
-I2C1_SCL
-Text Label 5400 2750 0    50   ~ 0
-V3.3
-Wire Wire Line
-	5400 2650 5350 2650
-Wire Wire Line
-	5400 2750 5350 2750
-$Comp
 L Device:Buzzer BZ1
 U 1 1 6145D72D
 P 1300 6300
@@ -627,25 +584,14 @@ F 3 "~" V 1275 6400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Q_NPN_BCE Q1
-U 1 1 614681C5
-P 1100 5600
-F 0 "Q1" H 1291 5646 50  0000 L CNN
-F 1 "Q_NPN_BCE" H 1291 5555 50  0000 L CNN
-F 2 "" H 1300 5700 50  0001 C CNN
-F 3 "~" H 1100 5600 50  0001 C CNN
-	1    1100 5600
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 6145D734
 P 1200 6000
 AR Path="/6121200F/6145D734" Ref="R?"  Part="1" 
 AR Path="/61233186/6145D734" Ref="R?"  Part="1" 
-AR Path="/6145D734" Ref="R?"  Part="1" 
+AR Path="/6145D734" Ref="R2"  Part="1" 
 AR Path="/61447CB7/6145D734" Ref="R?"  Part="1" 
-F 0 "R?" H 1200 6000 50  0000 C CNN
+F 0 "R2" H 1200 6000 50  0000 C CNN
 F 1 "510R" V 1084 6000 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 1130 6000 50  0001 C CNN
 F 3 "~" H 1200 6000 50  0001 C CNN
@@ -682,4 +628,64 @@ F 3 "" H 1200 5350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1200 5350 1200 5400
+$Comp
+L Transistor_BJT:S8050 Q1
+U 1 1 614638B7
+P 1100 5600
+F 0 "Q1" H 1290 5646 50  0000 L CNN
+F 1 "S8050" H 1290 5555 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 1300 5525 50  0001 L CIN
+F 3 "http://www.unisonic.com.tw/datasheet/S8050.pdf" H 1100 5600 50  0001 L CNN
+	1    1100 5600
+	1    0    0    -1  
+$EndComp
+Text Label 850  5600 2    50   ~ 0
+PA8
+Wire Wire Line
+	850  5600 900  5600
+$Comp
+L Symbols:OLED0.91'' U2
+U 1 1 6149595F
+P 2100 5550
+F 0 "U2" H 2428 5396 50  0000 L CNN
+F 1 "OLED0.91''" H 2428 5305 50  0000 L CNN
+F 2 "Footprint:OLED_0.91" H 2100 5550 50  0001 C CNN
+F 3 "" H 2100 5550 50  0001 C CNN
+	1    2100 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 6149C5B5
+P 2350 5400
+F 0 "#PWR?" H 2350 5250 50  0001 C CNN
+F 1 "+5V" H 2365 5573 50  0000 C CNN
+F 2 "" H 2350 5400 50  0001 C CNN
+F 3 "" H 2350 5400 50  0001 C CNN
+	1    2350 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 6149C9F3
+P 2250 6100
+F 0 "#PWR?" H 2250 5850 50  0001 C CNN
+F 1 "GNDD" H 2254 5945 50  0000 C CNN
+F 2 "" H 2250 6100 50  0001 C CNN
+F 3 "" H 2250 6100 50  0001 C CNN
+	1    2250 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 5400 2350 5450
+Wire Wire Line
+	2250 6050 2250 6100
+Text Label 1950 5600 2    50   ~ 0
+PB8
+Text Label 1950 5700 2    50   ~ 0
+PB9
+Wire Wire Line
+	1950 5600 2000 5600
+Wire Wire Line
+	1950 5700 2000 5700
 $EndSCHEMATC
